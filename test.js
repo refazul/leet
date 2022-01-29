@@ -1,4 +1,5 @@
 const myAtoi = require('./string-to-integer-atoi')
+const threeSum = require('./3sum')
 
 test('string-to-integer-atoi', () => {
     expect(myAtoi("-12")).toBe(-12);
@@ -12,3 +13,8 @@ test('string-to-integer-atoi', () => {
     expect(myAtoi("      -11919730356x")).toBe(-2147483648);
     expect(myAtoi("      -1191 9730356x")).toBe(-1191);
 });
+
+test('3sum', () => {
+    expect(threeSum([-1,0,1,2,-1,-4])).toEqual(expect.arrayContaining([[-1,-1,2],[-1,0,1]]));
+    // TLE when array contains many items
+})
