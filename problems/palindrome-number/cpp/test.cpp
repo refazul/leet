@@ -9,10 +9,10 @@ int main()
     //string line;
     int line;
     // For getting input from input.txt file
-    freopen("palindrome-number.test.input.txt", "r", stdin);
+    freopen("input.txt", "r", stdin);
 
     // Printing the Output to output.txt file
-    freopen("palindrome-number.test.output.txt", "w", stdout);
+    freopen("output.txt", "w", stdout);
 
     while (cin>>line)
     {
