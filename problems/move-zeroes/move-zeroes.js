@@ -14,4 +14,5 @@ module.exports = function (nums) {
     for (var i = 0; i < count; i++) {
         nums.push(0);
     }
+    return nums;//comment this before submission
 };
