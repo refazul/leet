@@ -1,12 +1,9 @@
 services:
   solver:
-    image: python:3.11-slim
-    working_dir: /app
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - .:/app
-    # Installs pandas every time it runs (fast enough for local text). 
-    # Runs the runner.py with the PROBLEM_ID environment variable.
-    command: >
-      sh -c "pip install pandas > /dev/null 2>&1 && python runner.py"
     environment:
-      - PROBLEM=177  # CHANGE THIS ID to run different problems
+      - PROBLEM=178  # CHANGE THIS ID to run different problems
