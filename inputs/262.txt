@@ -1,0 +1,8 @@
+| id | client_id | driver_id | city_id | status              | request_at |
+| -- | --------- | --------- | ------- | ------------------- | ---------- |
+| 1  | 1         | 10        | 1       | cancelled_by_client | 2013-10-04 |
+
+| users_id | banned | role   |
+| -------- | ------ | ------ |
+| 1        | No     | client |
+| 10       | No     | driver |
