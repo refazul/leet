@@ -3,11 +3,24 @@ import importlib.util
 import os
 import sys
 import io
+from pathlib import Path
 
 # --- CONFIGURATION ---
 PROBLEM_ID = os.environ.get('PROBLEM', '177')
-SOLUTION_FILE = f"solutions/p{PROBLEM_ID}.py"
 INPUT_FILE = f"inputs/{PROBLEM_ID}.txt"
+
+def find_solution_file(problem_id):
+    """Searches for p{problem_id}.py in the solutions directory tree."""
+    solutions_dir = Path("solutions")
+    pattern = f"p{problem_id}.py"
+    
+    # Search recursively for the solution file
+    for filepath in solutions_dir.rglob(pattern):
+        return str(filepath)
+    
+    return None
+
+SOLUTION_FILE = find_solution_file(PROBLEM_ID)
 
 def load_solution_func(filepath):
     """Imports the solution file and returns the first callable function."""
@@ -92,9 +105,15 @@ def parse_input_file(filepath):
 def main():
     print(f"--- 🚀 Running Problem {PROBLEM_ID} ---")
     
+    if not SOLUTION_FILE:
+        print(f"❌ Error: Solution file p{PROBLEM_ID}.py not found in solutions directory.")
+        return
+    
+    print(f"📂 Found solution: {SOLUTION_FILE}")
+    
     func = load_solution_func(SOLUTION_FILE)
     if not func:
-        print(f"❌ Error: Solution file {SOLUTION_FILE} not found or no function inside.")
+        print(f"❌ Error: No function found in {SOLUTION_FILE}.")
         return
 
     if not os.path.exists(INPUT_FILE):
