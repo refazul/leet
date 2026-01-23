@@ -2,7 +2,13 @@
 
 > Auto-generated tracking file for code analysis insights.
 > Last full scan: 2026-01-23T00:00:00Z
-> **Full drafts:** [`blog_drafts.md`](./blog_drafts.md)
+
+## Content Tracks
+
+| Track | Audience | Focus | Drafts File |
+|-------|----------|-------|-------------|
+| **Advanced Gotchas** | Experienced devs | Pain points, silent bugs, paradigm shifts | [`blog_drafts.md`](./blog_drafts.md) |
+| **Beginner Sparks** | Curious learners | "Aha!" moments, hidden params, input→output | [`beginner_sparks.md`](./beginner_sparks.md) |
 
 ---
 
@@ -17,18 +23,24 @@
    - **Deleted:** Path in table but not in git output
 4. Skip unchanged files entirely
 
-### Phase 2: Delta Analysis
-1. Read only New/Modified files
-2. Apply topic filtering rules:
-   - **NO** wiki-style content (if it's in docs paragraph 1, discard)
-   - **YES** gotchas: language quirks, memory pitfalls, silent bugs
-   - **YES** paradigm shifts: where optimization changes everything
-3. **Dedup check:** Before proposing a topic, verify it doesn't overlap with "Existing Topics" below
-4. Each topic requires: Hook, Pain Point, Evidence (specific file:line)
+### Phase 2: Delta Analysis (Two Lenses)
+
+**For Advanced Gotchas:**
+- **NO** wiki-style content (if it's in docs paragraph 1, discard)
+- **YES** gotchas: language quirks, memory pitfalls, silent bugs
+- **YES** paradigm shifts: where optimization changes everything
+- Format: Hook → Pain Point → Evidence
+
+**For Beginner Sparks:**
+- **NO** boring ABC basics
+- **YES** "Aha!" one-liners that do surprising things
+- **YES** hidden parameters most people never discover
+- **YES** visual input→output transformations
+- Format: Hook → The Magic → Input/Output → Why It Matters
 
 ### Phase 3: Update Ledger
-1. Append new topics to "Backlog" section (not Existing Topics)
-2. Write full draft to `blog_drafts.md`
+1. Append new topics to appropriate "Backlog" section
+2. Write full draft to appropriate file (`blog_drafts.md` or `beginner_sparks.md`)
 3. Update "Previously Scanned" table with new/changed file hashes
 4. Update "Last full scan" timestamp
 
@@ -68,9 +80,32 @@
 
 ---
 
-## Backlog (New Topics Pending Review)
+## Backlog — Advanced Gotchas
 
 _No new topics pending._
+
+---
+
+## Backlog — Beginner Sparks
+
+_No new topics pending._
+
+---
+
+## Beginner Sparks (Published/In Progress)
+
+| # | Hook | Category | Source | Status |
+|---|------|----------|--------|--------|
+| 1 | The Merge Type Nobody Knows Exists | Hidden Param | p1907.py:4 | Drafted |
+| 2 | Finding ALL Duplicates (Not Just the Extras) | Hidden Param | p182.py:4 | Drafted |
+| 3 | Expanding Rows From a Count Column | Trick | p178.py:9 | Drafted |
+| 4 | Transform vs Agg — Same Group, Different Shape | Paradigm | p184.py:6 | Drafted |
+| 5 | Reshape Your Entire Table in One Line | One-Liner | p1795.py:4 | Drafted |
+| 6 | Look at Neighboring Rows Without Loops | Paradigm | p180.py:4 | Drafted |
+| 7 | The Elegant NOT IN | Syntax | p607.py:10 | Drafted |
+| 8 | Aggregate to Comma-Separated Unique Values | One-Liner | p1484.py:7 | Drafted |
+| 9 | Conditional Assignment in One Line | Syntax | p1873.py:8 | Drafted |
+| 10 | Split Text But Keep the Delimiters | Regex | p3374.py:68 | Drafted |
 
 ---
 
@@ -140,8 +175,11 @@ _No new topics pending._
 **Commands:** See [`common_commands.md`](./common_commands.md)
 
 **Files:**
-- `concept_ledger.md` — This file (tracking & rules)
-- `blog_drafts.md` — Full topic write-ups
-- `common_commands.md` — Available commands
+```
+concept_ledger.md   — This file (tracking & rules)
+blog_drafts.md      — Advanced gotcha write-ups (5 topics)
+beginner_sparks.md  — Curiosity-first write-ups (10 sparks)
+common_commands.md  — Available commands
+```
 
 **Hash command:** `git ls-files -s solutions/**/*.py`
