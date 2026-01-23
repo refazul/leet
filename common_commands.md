@@ -8,7 +8,7 @@ Quick reference for the Developer's Diary workflow.
 
 | Command | What it does |
 |---------|--------------|
-| `scan for topics` | Delta scan for both tracks (gotchas + sparks) |
+| `scan for topics` | Delta scan for all tracks |
 | `scan for gotchas` | Delta scan for advanced gotcha topics only |
 | `scan for sparks` | Delta scan for beginner spark topics only |
 | `what changed` | List new/modified files since last scan |
@@ -19,10 +19,22 @@ Quick reference for the Developer's Diary workflow.
 
 | Command | What it does |
 |---------|--------------|
-| `blog status` | Show counts for both tracks |
+| `blog status` | Show counts for all tracks |
 | `show gotchas` | List all advanced gotcha hooks |
 | `show sparks` | List all beginner spark hooks |
-| `show backlog` | List pending ideas (both tracks) |
+| `show backlog` | List pending ideas (all tracks) |
+
+---
+
+## Quest System
+
+| Command | What it does |
+|---------|--------------|
+| `quest status` | Show current rank + progress bar |
+| `show skills` | List all 51 skills with unlock status |
+| `unlock skill N` | Mark skill N as completed |
+| `next rank` | Show skills needed to reach next rank |
+| `show layer X` | Show skills in a specific layer (foundation/selection/joining/aggregation/transformation/string/mastery) |
 
 ---
 
@@ -32,15 +44,27 @@ Quick reference for the Developer's Diary workflow.
 |---------|--------------|
 | `draft gotcha N` | Expand gotcha backlog item N |
 | `draft spark N` | Expand spark backlog item N |
+| `draft quest lesson` | Create a quest-style lesson with progress hooks |
 
 ---
 
 ## Content Tracks
 
-| Track | Audience | File |
-|-------|----------|------|
-| **Advanced Gotchas** | Experienced devs hunting bugs | `blog_drafts.md` |
-| **Beginner Sparks** | Curious learners wanting "aha!" | `beginner_sparks.md` |
+| Track | Audience | Tone | File |
+|-------|----------|------|------|
+| **Advanced Gotchas** | Experienced devs | "Here's what breaks" | `blog_drafts.md` |
+| **Beginner Sparks** | Curious learners | "Whoa, look at this!" | `beginner_sparks.md` |
+| **Pandas Quest** | Progress seekers | "You're 5 skills from Guru" | `pandas_quest.md` |
+
+---
+
+## Quest Ranks
+
+```
+🥚 Underdog    (0-9)   → 🐣 Apprentice (10-19)
+🐥 Journeyman (20-29) → 🦅 Expert    (30-39)
+🦉 Guru       (40-49) → 🐉 Legend    (50-51)
+```
 
 ---
 
@@ -50,6 +74,7 @@ Quick reference for the Developer's Diary workflow.
 concept_ledger.md   ← Tracking state, rules, topic index
 blog_drafts.md      ← Advanced gotcha write-ups
 beginner_sparks.md  ← Beginner spark write-ups
+pandas_quest.md     ← Skill tree + ranks + progress
 common_commands.md  ← This file
 ```
 
@@ -58,18 +83,21 @@ common_commands.md  ← This file
 ## Examples
 
 ```
-You: scan for topics
-→ Checks git hashes, analyzes changed files for BOTH tracks
+You: quest status
+→ "🐣 Apprentice | 15/51 skills | 5 to Journeyman"
 
-You: show sparks
-→ Lists the 10 beginner spark hooks
+You: show layer aggregation
+→ Lists the 10 aggregation skills with unlock status
 
-You: blog status
-→ "Advanced: 5 drafted, 0 backlog | Sparks: 10 drafted, 0 backlog"
+You: unlock skill 34
+→ Marks transform() as learned, updates progress
+
+You: next rank
+→ "You need: groupby, agg, count, first, nunique"
 ```
 
 ---
 
 ## Quick Start
 
-Forgot everything? Just type: `help` or `what can I do`
+Forgot everything? Just say: `help` or `what can I do`

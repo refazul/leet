@@ -5,10 +5,11 @@
 
 ## Content Tracks
 
-| Track | Audience | Focus | Drafts File |
-|-------|----------|-------|-------------|
+| Track | Audience | Focus | File |
+|-------|----------|-------|------|
 | **Advanced Gotchas** | Experienced devs | Pain points, silent bugs, paradigm shifts | [`blog_drafts.md`](./blog_drafts.md) |
 | **Beginner Sparks** | Curious learners | "Aha!" moments, hidden params, input→output | [`beginner_sparks.md`](./beginner_sparks.md) |
+| **Pandas Quest** | Progression seekers | Gamified skill tree, ranks, mastery tracking | [`pandas_quest.md`](./pandas_quest.md) |
 
 ---
 
@@ -179,6 +180,7 @@ _No new topics pending._
 concept_ledger.md   — This file (tracking & rules)
 blog_drafts.md      — Advanced gotcha write-ups (5 topics)
 beginner_sparks.md  — Curiosity-first write-ups (10 sparks)
+pandas_quest.md     — Gamified skill tree (51 skills, 6 ranks)
 common_commands.md  — Available commands
 ```
 
