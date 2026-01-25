@@ -6,4 +6,4 @@ services:
     volumes:
       - .:/app
     environment:
-      - PROBLEM=1164  # CHANGE THIS ID to run different problems
+      - PROBLEM=1045  # CHANGE THIS ID to run different problems
